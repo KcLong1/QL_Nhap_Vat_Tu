@@ -62,25 +62,25 @@ public class PurchaseOrder {
         return listProducts;
     }
 
-    public double getBuildPayment() {
-        double totalPayment = 0.0;
-        for (Items item : listProducts) {
-            totalPayment += item.getPrice() * item.getQuantity();
-        }
-        return totalPayment;
-    }
+//    public double getBuildPayment() {
+//        double totalPayment = 0.0;
+//        for (Items item : listProducts) {
+//            totalPayment += item.getPrice() * item.getQuantity();
+//        }
+//        return totalPayment;
+//    }
 
-    public double getBuildPayment(double discount) {
-        double totalPayment = getBuildPayment();
-        return totalPayment - (totalPayment * discount);
-    }
-    public int getBuildQuantity(){
-        int totalQuantity = 0;
-        for (Items item : listProducts) {
-            totalQuantity += item.getQuantity();
-        }
-        return totalQuantity;
-    }
+//    public double getBuildPayment(double discount) {
+//        double totalPayment = getBuildPayment();
+//        return totalPayment - (totalPayment * discount);
+//    }
+//    public int getBuildQuantity(){
+//        int totalQuantity = 0;
+//        for (Items item : listProducts) {
+//            totalQuantity += item.getQuantity();
+//        }
+//        return totalQuantity;
+//    }
 
     public double getTotalPayment() {
         return 0;

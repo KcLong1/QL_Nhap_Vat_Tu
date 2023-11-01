@@ -1,22 +1,20 @@
 package QuanLyNhapVatTu;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Items {
     private String name;
     private String code;
     private String unit;
     private double price;
-    private int quantity;
     Supplier supplier;
 
-    public Items(String name, String code, String unit, double price, int quantity, Supplier supplier) {
+    public Items(String name, String code, String unit, double price, String supplierName) {
         this.name = name;
         this.code = code;
         this.unit = unit;
         this.price = price;
-        this.quantity = quantity;
-        this.supplier = supplier;
+        this.supplier = new Supplier(supplierName);
     }
 
     public Items() {
@@ -54,14 +52,6 @@ public class Items {
         this.price = price;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public Supplier getSupplier() {
         return supplier;
     }
@@ -70,40 +60,31 @@ public class Items {
         this.supplier = supplier;
     }
 
-    public double getPayment() {
-        return price * quantity;
-    }
-
     public void Input() {
-        try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Nhap ma san pham: ");
-            name = scanner.nextLine();
-            System.out.print("Nhap code: ");
-            code = scanner.nextLine();
-            System.out.print("Nhap unit: ");
-            unit = scanner.nextLine();
-            System.out.print("Nhap price:");
-            price = scanner.nextDouble();
-            System.out.print("Nhap quantity: ");
-            quantity = scanner.nextInt();
-            scanner.nextLine();
-            System.out.print("Suppier: ");
-            String supplierName = scanner.nextLine();
-            supplier = new Supplier(supplierName);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhap ten san pham: ");
+        name = scanner.nextLine();
+        System.out.print("Nhap code: ");
+        code = scanner.nextLine();
+        System.out.print("Nhap don vi: ");
+        unit = scanner.nextLine();
+        System.out.print("Nhap gia:");
+        price = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.print("Nha cung cap: ");
+        String supplierName = scanner.nextLine();
+        supplier = new Supplier(supplierName);
 
-            System.out.println("Thong tin mat hang da duoc cap nhap");
-        }
-
+        System.out.println("Thong tin mat hang da duoc cap nhap");
     }
 
     public void Output() {
 
-        System.out.println("Name: " + name);
-        System.out.println("Code: " + code);
-        System.out.println("Unit: " + unit);
-        System.out.println("Price: " + price);
-        System.out.println("Quantity: " + quantity);
-        System.out.println("Supplier: " + supplier.getName());
+        System.out.println("Ten san pham: " + name);
+        System.out.println("Ma san pham: " + code);
+        System.out.println("Don vi: " + unit);
+        System.out.println("Gia: " + price);
+        System.out.println("Nha cung cap: " + supplier.getName());
     }
 
 }

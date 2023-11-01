@@ -14,6 +14,7 @@ public class Supplier extends Human {
     }
 
     public Supplier(String supplierName) {
+        this.name = supplierName;
     }
 
     public Supplier() {
