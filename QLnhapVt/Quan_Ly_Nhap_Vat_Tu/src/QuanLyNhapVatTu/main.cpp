@@ -10,5 +10,4 @@ struct node
 
 int main() {
     node* p = new node();
-    p->
 }
